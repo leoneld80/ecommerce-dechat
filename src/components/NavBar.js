@@ -1,43 +1,37 @@
-import React from 'react'
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { BsShopWindow } from "react-icons/bs";
 
 function NavBar() {
   return (
     <>
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
-        <div className="container">
-        <a className="navbar-brand" href="/"><i class="bi bi-shop"></i> E-commerce</a>
-        <button className="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="collapsibleNavId">
-          <ul className="navbar-nav me-auto mt-2 mt-lg-0">
-            <li className="nav-item active">
-              <a className="nav-link" href="/">Inicio <span className="visually-hidden">(current)</span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">Ofertas</a>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="/" id="dropdownId" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
-              <div className="dropdown-menu" aria-labelledby="dropdownId">
-                <a className="dropdown-item" href="/">Categoria 1</a>
-                <a className="dropdown-item" href="/">Categoria 2</a>
-              </div>
-            </li>
-          </ul>
-          <form className="d-flex my-2 my-lg-0">
-            <input className="form-control me-sm-2" type="text" placeholder="Buscar.."/>
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    
-  
-    
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            <BsShopWindow /> Ecommerce
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Inicio</Nav.Link>
+            <Nav.Link href="#features">Ofertas</Nav.Link>
+            <NavDropdown title="Categorias" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">
+                Categoria 1
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Categoria 2
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                Categoria 3
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Container>
+      </Navbar>
     </>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
