@@ -4,11 +4,12 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { BsShopWindow } from "react-icons/bs";
+import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" expand ="md">
         <Container>
           <Navbar.Brand href="#home">
             <BsShopWindow /> Ecommerce
@@ -28,6 +29,7 @@ function NavBar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+        <CartWidget></CartWidget>
         </Container>
       </Navbar>
     </>
