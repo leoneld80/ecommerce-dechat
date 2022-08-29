@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
 import data from "../../data/data";
-import { Col, Container, Row, Spinner } from "react-bootstrap";
+import { Row, Spinner } from "react-bootstrap";
 import "./ItemList.css";
 
 const ItemList = () => {

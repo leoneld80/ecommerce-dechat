@@ -1,10 +1,9 @@
 import React from "react";
-import { Container, Button, Card, Col, Row } from "react-bootstrap";
-import CardHeader from "react-bootstrap/esm/CardHeader";
+import {  Card, Col, Row } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 
 const Item = (props) => {
-  const { id, title, category, image, price, stock, rate } = props;
+  const { title, image, price, stock} = props;
 
   return (
     <Card style={{ width: "18rem", textAlign: "center", margin: "10px" }}>
