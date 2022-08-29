@@ -1,9 +1,8 @@
 import React from "react";
-import {  Card, Col, Row } from "react-bootstrap";
-import ItemCount from "../ItemCount/ItemCount";
+import { Card, Col, Row } from "react-bootstrap";
 
 const Item = (props) => {
-  const { title, image, price, stock} = props;
+  const { title, image, price } = props;
 
   return (
     <Card style={{ width: "18rem", textAlign: "center", margin: "10px" }}>
@@ -27,9 +26,6 @@ const Item = (props) => {
         <Col></Col>
 
         <h4 style={{ color: "red" }}>Final: ${price}</h4>
-
-        <span>Stock: {stock}</span>
-        <ItemCount stock={stock} initial={1} />
       </Row>
     </Card>
   );
