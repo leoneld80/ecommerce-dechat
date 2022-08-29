@@ -9,11 +9,13 @@ import CartWidget from "../CartWidget/CartWidget";
 function NavBar() {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand ="md" sticky="top">
+      <Navbar collapseOnSelect bg="dark" variant="dark" expand ="md" sticky="top">
         <Container>
           <Navbar.Brand href="#home">
             <Image src="./img/logo.png"  style={{width:"200px"}}/>
           </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home">Inicio</Nav.Link>
             <Nav.Link href="#features">Ofertas</Nav.Link>
@@ -30,6 +32,7 @@ function NavBar() {
             </NavDropdown>
           </Nav>
         <CartWidget></CartWidget>
+        </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
