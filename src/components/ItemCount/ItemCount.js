@@ -1,17 +1,17 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Container, Button, Col, Row } from "react-bootstrap";
 import { BsFillCartFill } from "react-icons/bs";
 import "./ItemCount.css";
 
 function ItemCount({ stock, initial }) {
   const [stockDinamico, setStockDinamico] = useState(initial);
-  const [addToCart, setAddToCart] = useState(false);
+  // const [addToCart, setAddToCart] = useState(false);
 
-  useEffect(() => {
-    // console.log(stockDinamico)
-    stock < stockDinamico ? setAddToCart(true) : setAddToCart(false);
-  }, [stockDinamico]);
+  // useEffect(() => {
+  //   // console.log(stockDinamico)
+  //   stock < stockDinamico ? setAddToCart(true) : setAddToCart(false);
+  // }, [stockDinamico]);
 
   const sumarItem = () => {
     setStockDinamico(stockDinamico + 1);
@@ -44,7 +44,7 @@ function ItemCount({ stock, initial }) {
             <Button
               variant="outline-primary"
               onClick={sumarItem}
-              disabled={stockDinamico == stock}
+              disabled={stockDinamico === stock}
             >
               +
             </Button>
@@ -56,7 +56,7 @@ function ItemCount({ stock, initial }) {
             variant="success"
             size="lg"
             onClick={onAdd}
-            disabled={addToCart}
+            // disabled={addToCart}
           >
             Agregar al <BsFillCartFill />
           </Button>
