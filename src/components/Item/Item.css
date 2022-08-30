@@ -1,3 +1,4 @@
-Card:hover {
+.productCard:hover {
     box-shadow: 0px 0px 10px rgb(100 100 100);
+    cursor: pointer;
   }
