@@ -31,9 +31,14 @@ const ItemList = () => {
 
   return (
     <div className="ItemList">
+      { products.length === 0 && 
+      <div className="mb-4" style={{textAlign:"center", margin:"auto"}}>
+      <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span></Spinner>
+      </div>
+      }
+      
       <Row>
-      { products.length === 0 &&  <Spinner animation="border" role="status">
-      <span className="visually-hidden">Loading...</span></Spinner>}
      
     
         {products.map((product) => (
