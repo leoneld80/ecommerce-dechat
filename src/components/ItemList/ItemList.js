@@ -30,7 +30,7 @@ const ItemList = () => {
   }, []);
 
   return (
-    <div className="ItemList">
+    <div className="ItemList col-lg">
       { products.length === 0 && 
       <div className="mb-4" style={{textAlign:"center", margin:"auto"}}>
       <Spinner animation="border" role="status">

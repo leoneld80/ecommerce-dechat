@@ -6,7 +6,7 @@ import "./ItemListContainer.css"
 function ItemListContainer(props) {
   return (
     <div>
-        <Container fluid className='mt-3'>
+        <Container  className='mt-5'>
         <ItemList/>
         </Container>
     </div>
