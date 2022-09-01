@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
           });
       }, []);
 
-      const productFilter = product.filter(product => product.id === 1)
+      const productFilter = product.find(product => product.id === Number(1))
       console.log(productFilter);
   return (
     <div>
