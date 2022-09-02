@@ -28,19 +28,16 @@ function ItemCount({ stock, initial }) {
     <div>
       <Container>
         <Row className="mb-3">
-          <Col>
+      <span>
+
             <Button
               variant="outline-primary"
               onClick={restarItem}
               disabled={stockDinamico <= 1}
-            >
+              >
               -
             </Button>
-          </Col>
-          <Col>
-            <span>{stockDinamico}</span>
-          </Col>
-          <Col>
+              {stockDinamico}
             <Button
               variant="outline-primary"
               onClick={sumarItem}
@@ -48,7 +45,7 @@ function ItemCount({ stock, initial }) {
             >
               +
             </Button>
-          </Col>
+          </span>
         </Row>
 
         <div className="d-grid gap-2">
@@ -64,6 +61,10 @@ function ItemCount({ stock, initial }) {
       </Container>
     </div>
   );
+}
+
+ItemCount.defaultProps = {
+  initial : 1
 }
 
 export default ItemCount;
