@@ -37,7 +37,10 @@ function ItemCount({ stock, initial }) {
               >
               -
             </Button>
+            <span style={{margin:"2em"}}>
+
               {stockDinamico}
+            </span>
             <Button
               variant="outline-primary"
               onClick={sumarItem}

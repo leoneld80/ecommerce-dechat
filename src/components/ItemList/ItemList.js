@@ -41,7 +41,7 @@ const ItemList = () => {
       <Row>
      
     
-        {products.map((product) => (
+        {products.slice(0,5).map((product) => (
           <Item
             key={product.id}
             id={product.id}

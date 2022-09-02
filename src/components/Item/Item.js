@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Placeholder, Row } from "react-bootstrap";
 import "./Item.css"
 
 const Item = (props) => {
@@ -8,6 +8,7 @@ const Item = (props) => {
   
 
   return (
+
     <Card className = "productCard"style={{ width: "15rem", textAlign: "center", margin: "10px" }}>
       <Card.Img variant="top" src={image} />
       <Row>
@@ -31,6 +32,8 @@ const Item = (props) => {
         </Col>
       </Row>
     </Card>
+
+
   );
 };
 

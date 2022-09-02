@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import "./ItemDetail.css";
-import { BsStarFill } from "react-icons/bs";
+import { BsStarFill, BsStar } from "react-icons/bs";
 import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = (props) => {
@@ -19,8 +19,8 @@ const ItemDetail = (props) => {
         <Col>
           <h4>{title}</h4>
           <Row>
-            <Row>
-              <Col>
+            
+              <Col className="rating">
                 {[...Array(rate)].map((star) => {
                   return (
                     <label>
@@ -29,17 +29,26 @@ const ItemDetail = (props) => {
                     </label>
                   );
                 })}
+                   {[...Array( 5 - rate)].map((star) => {
+                  return (
+                    <label>
+                      {" "}
+                      <BsStar></BsStar>
+                    </label>
+                  );
+                })}
+                
               </Col>
+            </Row>
               <Row>
                 <Col>
                   <span>Categoria: {category}</span>
                 </Col>
               </Row>
-            </Row>
+          
             <Col>
               <span>6 Cuotas s/interés</span>
             </Col>
-          </Row>
           <Row>
             <Col>
               <h3 style={{ fontWeight: "bold" }}>${(price / 6).toFixed(2)}</h3>
@@ -61,7 +70,7 @@ const ItemDetail = (props) => {
           </Row>
           <Row>
             <Col>
-              <ItemCount></ItemCount>
+              <ItemCount stock={stock}></ItemCount>
             </Col>
           </Row>
         </Col>
