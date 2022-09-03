@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "react-bootstrap";
+import { Button, Form, Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -17,7 +17,7 @@ function NavBar() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
+            
             <Nav.Link href="#features">Ofertas</Nav.Link>
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
@@ -30,6 +30,16 @@ function NavBar() {
                 Categoria 3
               </NavDropdown.Item>
             </NavDropdown>
+            
+            <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Buscar.."
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Buscar</Button>
+          </Form>
           </Nav>
         <CartWidget></CartWidget>
         </Navbar.Collapse>
