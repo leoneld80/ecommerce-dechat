@@ -8,6 +8,7 @@ const Item = (props) => {
   
 
   return (
+
     <Card className = "productCard"style={{ width: "15rem", textAlign: "center", margin: "10px" }}>
       <Card.Img variant="top" src={image} />
       <Row>
@@ -31,6 +32,8 @@ const Item = (props) => {
         </Col>
       </Row>
     </Card>
+
+
   );
 };
 

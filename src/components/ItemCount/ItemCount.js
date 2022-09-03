@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Container, Button, Col, Row } from "react-bootstrap";
+import { Container, Button, Row } from "react-bootstrap";
 import { BsFillCartFill } from "react-icons/bs";
 import "./ItemCount.css";
 
@@ -28,19 +28,19 @@ function ItemCount({ stock, initial }) {
     <div>
       <Container>
         <Row className="mb-3">
-          <Col>
+      <span>
+
             <Button
               variant="outline-primary"
               onClick={restarItem}
               disabled={stockDinamico <= 1}
-            >
+              >
               -
             </Button>
-          </Col>
-          <Col>
-            <span>{stockDinamico}</span>
-          </Col>
-          <Col>
+            <span style={{margin:"2em"}}>
+
+              {stockDinamico}
+            </span>
             <Button
               variant="outline-primary"
               onClick={sumarItem}
@@ -48,7 +48,7 @@ function ItemCount({ stock, initial }) {
             >
               +
             </Button>
-          </Col>
+          </span>
         </Row>
 
         <div className="d-grid gap-2">
@@ -64,6 +64,10 @@ function ItemCount({ stock, initial }) {
       </Container>
     </div>
   );
+}
+
+ItemCount.defaultProps = {
+  initial : 1
 }
 
 export default ItemCount;
