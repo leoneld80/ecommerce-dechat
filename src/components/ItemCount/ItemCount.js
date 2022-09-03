@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Container, Button, Col, Row } from "react-bootstrap";
+import { Container, Button, Row } from "react-bootstrap";
 import { BsFillCartFill } from "react-icons/bs";
 import "./ItemCount.css";
 
