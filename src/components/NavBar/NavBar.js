@@ -41,8 +41,8 @@ function NavBar() {
             <Button variant="outline-success">Buscar</Button>
           </Form>
           </Nav>
-        <CartWidget></CartWidget>
         </Navbar.Collapse>
+        <CartWidget></CartWidget>
         </Container>
       </Navbar>
     </>
