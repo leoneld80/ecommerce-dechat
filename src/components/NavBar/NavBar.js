@@ -35,6 +35,12 @@ function NavBar() {
               <NavDropdown.Item as={Link} to="/category/series-tv">
                 Series-Tv
               </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/category/dragon-ball">
+                Dragon Ball
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/category/disney">
+                Disney
+              </NavDropdown.Item>
             </NavDropdown>
             
             {/* <Form className="d-flex">
