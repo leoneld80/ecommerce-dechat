@@ -5,7 +5,7 @@ const data =[
         title:"Mandalorian With Grogu (402) - Star Wars: Across The Galaxy (Star Wars)",
         category_id:"star-wars",
         category:"Star Wars",
-        image:"./img/products/funko-mandalorian.jpg",
+        image:"../img/products/funko-mandalorian.jpg",
         price: 9899,
         stock: 10 ,
         rate: 5
@@ -16,7 +16,7 @@ const data =[
         title:"Super Saiyan Kefla (828) - Dragon Ball Super (TV)",
         category_id:"dragon-ball",
         category:"Dragon Ball",
-        image:"./img/products/super-saiyan-kefla.jpg",
+        image:"../img/products/super-saiyan-kefla.jpg",
         price: 9099,
         stock: 10 ,
         rate: 5
@@ -27,7 +27,8 @@ const data =[
         title:"Alphonse (392) - Fullmetal Alchemist Season 1 (TV)",
         category_id:"series-tv",
         category:"Series-tv",
-        image:"./img/products/fullmetal-alchemist-alphonse-elric.jpeg",
+        image:"../img/products/fullmetal-alchemist-alphonse-elric.jpeg",
+
         price: 9099,
         stock: 10 ,
         rate: 5
@@ -38,7 +39,7 @@ const data =[
         title:"The Vision (824) Diamond Glitter - Wanda Vision (Marvel)",
         category_id:"marvel",
         category:"Marvel",
-        image:"./img/products/the-vision-marvel.jpg",
+        image:"../img/products/the-vision-marvel.jpg",
         price: 8199,
         stock: 10 ,
         rate: 4
@@ -49,7 +50,7 @@ const data =[
         title:"El Chimichanga De La Muerte (712) - Lucha Libre Edition (Marvel)",
         category_id:"marvel",
         category:"Marvel",
-        image:"./img/products/el-chimichanga-de-la-muerte.jpg",
+        image:"../img/products/el-chimichanga-de-la-muerte.jpg",
         price: 5899,
         stock: 10 ,
         rate: 4
@@ -60,7 +61,7 @@ const data =[
         title:"Dark Trooper With Grogu (488) With Glow Chase - Star Wars: The Mandalorian (Star Wars)",
         category_id:"star-wars",
         category:"Star Wars",
-        image:"./img/products/dark-trooper-mandalorian.jpg",
+        image:"../img/products/dark-trooper-mandalorian.jpg",
         price: 9099,
         stock: 10 ,
         rate: 5
@@ -71,7 +72,7 @@ const data =[
         title:"Night King Iron Throne Deluxe (74) - Game Of Thrones (GOT)",
         category_id:"series-tv",
         category:"Series-tv",
-        image:"./img/products/night-king.jpg",
+        image:"../img/products/night-king.jpg",
         price: 18399,
         stock: 10 ,
         rate: 5
@@ -82,7 +83,7 @@ const data =[
         title:"Harley Quinn Pink (45) - DC (DC)",
         category_id:"dc",
         category:"DC",
-        image:"./img/products/harley-quinn.jpg",
+        image:"../img/products/harley-quinn.jpg",
         price: 9099,
         stock: 10 ,
         rate: 5
@@ -93,7 +94,7 @@ const data =[
         title:"Batman 1997 (314) - Batman 80th (DC)",
         category_id:"dc",
         category:"DC",
-        image:"./img/products/batman.jpg",
+        image:"../img/products/batman.jpg",
         price: 9099,
         stock: 10 ,
         rate: 5
@@ -104,7 +105,7 @@ const data =[
         title:"Superman Black (1127) - Justice League Snyder Cut (DC)",
         category_id:"dc",
         category:"DC",
-        image:"./img/products/superman-black.jpg",
+        image:"../img/products/superman-black.jpg",
         price: 9099,
         stock: 10 ,
         rate: 5
@@ -115,7 +116,7 @@ const data =[
         title: "Finn Uniform (191) - Star Wars",
         category_id:"star-wars",
         category:"Star Wars",
-        image:"./img/products/finn-uniform.jpg",
+        image:"../img/products/finn-uniform.jpg",
         price: 5899,
         stock: 10 ,
         rate: 4
@@ -126,7 +127,7 @@ const data =[
         title:"Luke Skywalker (501) Glow Chase - The Mandalorian (Star Wars)",
         category_id:"star-wars",
         category:"Star Wars",
-        image:"./img/products/luke.jpg",
+        image:"../img/products/luke.jpg",
         price: 8199,
         stock: 10 ,
         rate: 5
@@ -137,7 +138,7 @@ const data =[
         title:" Aragorn (531) - The Lord Of The Rings (Movies)",
         category_id:"series-tv",
         category:"Series-tv",
-        image:"./img/products/aragorn.jpg",
+        image:"../img/products/aragorn.jpg",
         price: 8199,
         stock: 10 ,
         rate: 4
@@ -148,7 +149,7 @@ const data =[
         title:"Perfect Cell (13) - Dragon Ball (TV)",
         category_id:"dragon-ball",
         category:"Dragon Ball",
-        image:"./img/products/perfect-cell.jpg",
+        image:"../img/products/perfect-cell.jpg",
         price: 8199,
         stock: 10 ,
         rate: 4
@@ -159,7 +160,7 @@ const data =[
         title:"Training Vegeta (701) - Dragon Ball Z (TV)",
         category_id:"dragon-ball",
         category:"Dragon Ball",
-        image:"./img/products/training-vegeta.jpg",
+        image:"../img/products/training-vegeta.jpg",
         price: 9099,
         stock: 10 ,
         rate: 5
@@ -170,7 +171,7 @@ const data =[
         title:"Kiara (443) - Rick & Morty (TV)",
         category_id:"series-tv",
         category:"Series-tv",
-        image:"./img/products/kiara.jpg",
+        image:"../img/products/kiara.jpg",
         price: 5899,
         stock: 10 ,
         rate: 4
@@ -181,7 +182,7 @@ const data =[
         title:"Shrimp Rick (644) - Rick and Morty (TV)",
         category_id:"series-tv",
         category:"Series-tv",
-        image:"./img/products/shrimp-rick.jpg",
+        image:"../img/products/shrimp-rick.jpg",
         price: 9099,
         stock: 10 ,
         rate: 4
@@ -192,7 +193,7 @@ const data =[
         title:"ComicCon Shrimp Morty (645) - Rick and Morty (TV)",
         category_id:"series-tv",
         category:"Series-tv",
-        image:"./img/products/shrimp-morty.jpg",
+        image:"../img/products/shrimp-morty.jpg",
         price: 9099,
         stock: 10 ,
         rate: 4
@@ -203,7 +204,7 @@ const data =[
         title:"Wall-E With Trash Lid Hat (1120) - Wall-E (Disney)",
         category_id:"disney",
         category:"Disney",
-        image:"./img/products/wall-e.jpg",
+        image:"../img/products/wall-e.jpg",
         price: 8199,
         stock: 10 ,
         rate: 4
@@ -214,7 +215,7 @@ const data =[
         title:"Ongi (1003) - Raya (Disney)",
         category_id:"disney",
         category:"Disney",
-        image:"./img/products/ongis.jpeg",
+        image:"../img/products/ongis.jpeg",
         price: 8199,
         stock: 10 ,
         rate: 4
