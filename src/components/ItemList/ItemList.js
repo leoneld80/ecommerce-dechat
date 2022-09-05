@@ -4,7 +4,7 @@ import data from "../../data/data";
 import { Row, Spinner } from "react-bootstrap";
 import "./ItemList.css";
 
-const ItemList = () => {
+const ItemList = (props) => {
   const [products, setProducts] = useState([]);
 
   const getData = () => {
