@@ -6,7 +6,7 @@ import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = (props) => {
   const { title, image, price, category, stock, rate } = props;
-  console.log(typeof rate);
+ 
   return (
     <Card
       

@@ -2,18 +2,22 @@ import React, { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import data from "../../data/data";
 import { Container, Spinner } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState([]);
-    const getData = () => {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve( data.find(product => product.id === Number(1) ));
-          }, 2000 );
-        });
-      };
+    const {product_id} = useParams()
+    console.log(product_id);
+
     
-      useEffect(() => {
+    useEffect(() => {
+        const getData = () => {
+            return new Promise((resolve, reject) => {
+              setTimeout(() => {
+                resolve( data.find((product) => product.id === Number(product_id) ));
+              }, 2000 );
+            });
+          };
     
         getData()
           .then((res) => {
@@ -22,10 +26,8 @@ const ItemDetailContainer = () => {
           .catch((error) => {
             console.log(error);
           })
-          .finally(() => {
-            console.log("fin del proceso");
-          });
-      }, []);
+          
+      }, [product_id]);
 
       // const productFilter = product.filter(product => product.id === Number(1) )
       console.log(product);

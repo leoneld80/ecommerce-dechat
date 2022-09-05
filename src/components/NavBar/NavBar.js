@@ -1,9 +1,10 @@
 import React from "react";
-import { Button, Form, Image } from "react-bootstrap";
+import { Badge, Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
@@ -11,27 +12,32 @@ function NavBar() {
     <>
       <Navbar collapseOnSelect bg="dark" variant="dark" expand ="md" sticky="top">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand as={Link} to="/">
             <Image src="./img/logo.png"  style={{width:"200px"}}/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             
-            <Nav.Link href="#features">Ofertas</Nav.Link>
+            <Nav.Link as={Link} to="/sale">
+              <Badge bg="danger">Ofertas</Badge>
+              </Nav.Link>
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
-                Categoria 1
+              <NavDropdown.Item as={Link} to="/category/star-wars">
+                Star Wars
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Categoria 2
+              <NavDropdown.Item as={Link} to="/category/marvel">
+                Marvel
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Categoria 3
+              <NavDropdown.Item as={Link} to="/category/dc">
+                DC
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/category/series-tv">
+                Series-Tv
               </NavDropdown.Item>
             </NavDropdown>
             
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Buscar.."
@@ -39,10 +45,10 @@ function NavBar() {
               aria-label="Search"
             />
             <Button variant="outline-success">Buscar</Button>
-          </Form>
+          </Form> */}
           </Nav>
-        <CartWidget></CartWidget>
         </Navbar.Collapse>
+        <CartWidget></CartWidget>
         </Container>
       </Navbar>
     </>
