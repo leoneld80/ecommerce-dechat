@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Button, Form, Image } from "react-bootstrap";
+import { Badge, Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -26,10 +26,10 @@ function NavBar() {
               <NavDropdown.Item as={Link} to="/category/star-wars">
                 Star Wars
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/Marvel">
+              <NavDropdown.Item as={Link} to="/category/marvel">
                 Marvel
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/DC">
+              <NavDropdown.Item as={Link} to="/category/dc">
                 DC
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/category/series-tv">
