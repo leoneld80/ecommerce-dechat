@@ -9,15 +9,15 @@ const ItemDetailContainer = () => {
     const {product_id} = useParams()
     console.log(product_id);
 
-    const getData = () => {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve( data.find((product) => product.id === Number(product_id) ));
-          }, 2000 );
-        });
-      };
     
-      useEffect(() => {
+    useEffect(() => {
+        const getData = () => {
+            return new Promise((resolve, reject) => {
+              setTimeout(() => {
+                resolve( data.find((product) => product.id === Number(product_id) ));
+              }, 2000 );
+            });
+          };
     
         getData()
           .then((res) => {
