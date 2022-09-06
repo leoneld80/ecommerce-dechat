@@ -11,13 +11,13 @@ const Item = (props) => {
   return (
     <Card
       className="productCard"
-      style={{ width: "15rem", textAlign: "center", margin: "10px" }}
+      style={{ width: "15rem", textAlign: "center", margin: "2%" }}
     >
       <Link to={productLink}>
         <Card.Img variant="top" src={image} />
         <Row>
           <Col>
-            <h4>{title}</h4>
+            <h4 style={{color:"black"}}>{title}</h4>
           </Col>
         </Row>
         <Row>

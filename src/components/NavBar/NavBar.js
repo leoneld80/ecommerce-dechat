@@ -13,7 +13,7 @@ function NavBar() {
       <Navbar collapseOnSelect bg="light" variant="light" expand ="md" sticky="top">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <Image src="../img/logo.png"  style={{width:"200px"}}/>
+            <Image src="../img/logo.png"  style={{width:"20%"}} alt="logo funko store"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
