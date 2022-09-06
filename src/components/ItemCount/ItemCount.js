@@ -37,7 +37,7 @@ function ItemCount({ stock, initial }) {
               >
               -
             </Button>
-            <span style={{margin:"2em"}}>
+            <span style={{margin:"0.5em"}}>
 
               {stockDinamico}
             </span>
@@ -51,7 +51,7 @@ function ItemCount({ stock, initial }) {
           </span>
         </Row>
 
-        <div className="d-grid gap-2">
+        <div className="d-grid gap-2 mb-2">
           <Button
             variant="success"
             size="lg"

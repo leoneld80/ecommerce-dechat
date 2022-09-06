@@ -11,7 +11,7 @@ function ItemListContainer(props) {
   return (
     <div>
       <AlertMsg/>
-        <Container  className='mt-5'>
+        <Container  className='mt-5' style={{marginAlign:"center"}}>
         <ItemList/>
         </Container>
     </div>

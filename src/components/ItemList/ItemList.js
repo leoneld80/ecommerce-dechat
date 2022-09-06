@@ -34,7 +34,7 @@ const ItemList = (props) => {
   }, [category_id]);
 
   return (
-    <div className="ItemList col-lg">
+    <div className="ItemList col-lg" style={{alignItems:"center"}}>
       {products.length === 0 && (
         <div className="mb-4" style={{ textAlign: "center", margin: "auto" }}>
           <Spinner animation="border" role="status">
