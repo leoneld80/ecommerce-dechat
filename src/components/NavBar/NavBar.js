@@ -10,7 +10,7 @@ import CartWidget from "../CartWidget/CartWidget";
 function NavBar() {
   return (
     <>
-      <Navbar collapseOnSelect bg="dark" variant="dark" expand ="md" sticky="top">
+      <Navbar collapseOnSelect bg="light" variant="light" expand ="md" sticky="top">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <Image src="../img/logo.png"  style={{width:"200px"}}/>
