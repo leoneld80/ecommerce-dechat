@@ -43,7 +43,7 @@ const ItemList = (props) => {
         </div>
       )}
 
-      <Row>
+      <Row style={{justifyContent:"center"}}>
         {products.map((product) => (
           <Item
             key={product.id}
