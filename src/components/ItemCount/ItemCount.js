@@ -1,50 +1,37 @@
 import React from "react";
-import { useState } from "react";
 import { Container, Button, Row } from "react-bootstrap";
 import { BsFillCartFill } from "react-icons/bs";
 import "./ItemCount.css";
 
-function ItemCount({ stock, initial }) {
-  const [stockDinamico, setStockDinamico] = useState(initial);
-  // const [addToCart, setAddToCart] = useState(false);
+function ItemCount({ stock, counter, setCounter, onAdd }) {
+ 
 
-  // useEffect(() => {
-  //   // console.log(stockDinamico)
-  //   stock < stockDinamico ? setAddToCart(true) : setAddToCart(false);
-  // }, [stockDinamico]);
-
-  const sumarItem = () => {
-    setStockDinamico(stockDinamico + 1);
+  const handleSumar = () => {
+    setCounter(counter + 1);
   };
 
-  const restarItem = () => {
-    setStockDinamico(stockDinamico - 1);
+  const handleRestar = () => {
+    setCounter(counter - 1);
   };
 
-  const onAdd = () => {
-    console.log(stockDinamico);
-  };
+
   return (
     <div>
       <Container>
         <Row className="mb-3">
-      <span>
-
+          <span>
             <Button
               variant="outline-primary"
-              onClick={restarItem}
-              disabled={stockDinamico <= 1}
-              >
+              onClick={handleRestar}
+              disabled={counter <= 1}
+            >
               -
             </Button>
-            <span style={{margin:"0.5em"}}>
-
-              {stockDinamico}
-            </span>
+            <span style={{ margin: "0.5em" }}>{counter}</span>
             <Button
               variant="outline-primary"
-              onClick={sumarItem}
-              disabled={stockDinamico === stock}
+              onClick={handleSumar}
+              disabled={counter === stock}
             >
               +
             </Button>
@@ -56,7 +43,6 @@ function ItemCount({ stock, initial }) {
             variant="success"
             size="lg"
             onClick={onAdd}
-            // disabled={addToCart}
           >
             Agregar al <BsFillCartFill />
           </Button>
@@ -66,8 +52,6 @@ function ItemCount({ stock, initial }) {
   );
 }
 
-ItemCount.defaultProps = {
-  initial : 1
-}
+
 
 export default ItemCount;
