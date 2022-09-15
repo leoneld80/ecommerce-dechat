@@ -27,7 +27,6 @@ const ItemDetailContainer = () => {
   }, [product_id]);
 
   // const productFilter = product.filter(product => product.id === Number(1) )
-  console.log(product);
   return (
     <div>
       <Container>
