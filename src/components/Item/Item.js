@@ -6,7 +6,6 @@ import "./Item.css";
 const Item = (props) => {
   const { title, image, price, id } = props;
   const productLink = `/product/${id}`;
-  console.log(productLink);
 
   return (
     <Card
