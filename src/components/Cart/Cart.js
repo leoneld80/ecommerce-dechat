@@ -2,10 +2,9 @@ import React, { useContext } from "react";
 import { Button, Table } from "react-bootstrap";
 import { CartContext } from "../../context/CartContext/CartContext";
 import { BsTrash } from "react-icons/bs";
-import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, removeItem } = useContext(CartContext);
+  const { cart, removeItem, clearCart } = useContext(CartContext);
   console.log(cart);
 
   return (
@@ -29,23 +28,21 @@ const Cart = () => {
               <td>
                 {item.title}
                 <div>
-                  <img src={item.imagen} width="50%" alt="imagen del producto"></img>
+                  <img src={item.imagen} width="20%" alt="imagen del producto"></img>
                 </div>
               </td>
               <td>{item.cantidad}</td>
               <td>${item.price}</td>
               <div className="cartButtons">
-                {/* <Link to= {}>
-                  <BsTrash />
-                </Link> */}
-                {/* Habilitar icono que ejecute el borrado del item */}
+                
+                  <BsTrash onClick={()=> removeItem(item.id)}/>
               </div>
             </tr>
           ))}
         </tbody>
       </Table>
       {cart.length > 0 ? (
-        <Button variant="warning" onClick={() => console.log("Danger")}>
+        <Button variant="warning" onClick={() => clearCart()}>
           Vaciar Carrito
         </Button>
       ) : (
