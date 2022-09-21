@@ -1,14 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Card, Col, Row, Button } from "react-bootstrap";
 import "./ItemDetail.css";
 import { BsStarFill, BsStar } from "react-icons/bs";
 import ItemCount from "../ItemCount/ItemCount";
-import { CartContext } from "../../context/CartContext/CartContext";
+import { useCartContext } from "../../context/CartContext/CartContext";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
   const [cantidad, setCantidad] = useState(1);
+ 
 
-  const { cart, addToCart } = useContext(CartContext);
+  const { cart, addToCart, isInCart } = useCartContext();
   console.log(cart);
   const handleAgregar = () => {
     // const sumarMismoItem = {
@@ -19,7 +21,8 @@ const ItemDetail = ({ item }) => {
       id: item.id,
       price: item.price,
       title: item.title,
-      cantidad: cantidad
+      cantidad: cantidad,
+      imagen: item.image
     };
     if (cart.find((item) => item.id === itemToCart.id )) {
       addToCart()
@@ -87,13 +90,24 @@ const ItemDetail = ({ item }) => {
           </Row>
           <Row>
             <Col>
+            {
+              isInCart(item.id) 
+              ?
+              ""
+              :
               <ItemCount
                 stock={item.stock}
                 counter={cantidad}
                 setCounter={setCantidad}
                 onAdd={handleAgregar}
               ></ItemCount>
-            {cart.length > 0 ? <Button >Finalizar Compra</Button> : "" }
+            }
+            {cart.length > 0 ? 
+            <Link to="/cart">
+            <Button >Finalizar Compra</Button> 
+            </Link>
+            : "" }
+            
             </Col>
           </Row>
         </Col>
