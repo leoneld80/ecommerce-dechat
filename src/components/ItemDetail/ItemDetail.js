@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Card, Col, Row, Button } from "react-bootstrap";
 import "./ItemDetail.css";
 import { BsStarFill, BsStar } from "react-icons/bs";
