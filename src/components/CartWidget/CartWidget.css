@@ -3,3 +3,21 @@
     font-size: larger;
     margin-right: 10px;
 }
+
+.widget {
+    font-size: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.widget-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cartNumber {
+    color: #fe1379;
+    font-size: 1rem;
+    font-weight: bold;
+}

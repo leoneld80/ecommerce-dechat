@@ -44,7 +44,7 @@ function ItemCount({ stock, counter, setCounter, onAdd }) {
             size="lg"
             onClick={onAdd}
           >
-            Agregar al <BsFillCartFill />
+            Agregar al carrito <BsFillCartFill />
           </Button>
         </div>
       </Container>
