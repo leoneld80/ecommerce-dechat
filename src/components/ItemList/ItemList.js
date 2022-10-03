@@ -1,40 +1,48 @@
 import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
-import data from "../../data/data";
+// import data from "../../data/data";
 import { Row, Spinner } from "react-bootstrap";
 import "./ItemList.css";
 import { useParams } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const ItemList = (props) => {
   const [products, setProducts] = useState([]);
 
   const { category_id } = useParams();
 
-  const getData = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(data);
-      }, 2000);
-    });
-  };
+  // const getData = () => {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve(data);
+  //     }, 2000);
+  //   });
+  // };
 
   useEffect(() => {
-    getData().then((res) => {
-      if (!category_id) {
-        setProducts(res);
-      } else {
-        setProducts( res.filter((prod) => prod.category_id === category_id))
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    }).finally(() => {
-      console.log("fin del proceso");
+    const productsRef = collection(db, "items");
+    getDocs(productsRef).then((res) => {
+      const productsDB = res.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+      console.log(productsDB);
+      setProducts(productsDB);
     });
+    // getData().then((res) => {
+    //   if (!category_id) {
+    //     setProducts(res);
+    //   } else {
+    //     setProducts( res.filter((prod) => prod.category_id === category_id))
+    //   }
+    // })
+    // .catch((error) => {
+    //   console.log(error);
+    // }).finally(() => {
+    //   console.log("fin del proceso");
+    // });
   }, [category_id]);
 
   return (
-    <div className="ItemList col-lg" style={{alignItems:"center"}}>
+    <div className="ItemList col-lg" style={{ alignItems: "center" }}>
       {products.length === 0 && (
         <div className="mb-4" style={{ textAlign: "center", margin: "auto" }}>
           <Spinner animation="border" role="status">
@@ -43,7 +51,7 @@ const ItemList = (props) => {
         </div>
       )}
 
-      <Row style={{justifyContent:"center"}}>
+      <Row style={{ justifyContent: "center" }}>
         {products.map((product) => (
           <Item
             key={product.id}
