@@ -66,14 +66,26 @@ const Cart = () => {
         <Col className="precioTotal">
           <span>Total a Pagar</span>
         </Col>
-
+        <Row>
+            <Col>
+        {/* <Button variant="success" onClick={() => console.log("Success")}>
+          Finalizar Compra
+        </Button> */}
+            </Col>
+        </Row>
+        <Col>
         {cart.length >= 0 ? (
+          <div>
+
           <Button variant="warning" onClick={() => clearCart()}>
             Vaciar Carrito
           </Button>
+          <Link className="btn btn-success" to="/checkout">Finalizar compra</Link>
+          </div>
         ) : (
           ""
-        )}
+          )}
+          </Col>
       </Row>
     </div>
   );

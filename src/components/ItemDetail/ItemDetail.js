@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
   const [cantidad, setCantidad] = useState(1);
- 
 
   const { cart, addToCart, isInCart } = useCartContext();
   console.log(cart);
@@ -22,12 +21,12 @@ const ItemDetail = ({ item }) => {
       price: item.price,
       title: item.title,
       cantidad: cantidad,
-      imagen: item.image
+      imagen: item.image,
     };
-    if (cart.find((item) => item.id === itemToCart.id )) {
-      addToCart()
+    if (cart.find((item) => item.id === itemToCart.id)) {
+      addToCart();
     }
-    addToCart(itemToCart)
+    addToCart(itemToCart);
   };
 
   return (
@@ -90,24 +89,34 @@ const ItemDetail = ({ item }) => {
           </Row>
           <Row>
             <Col>
-            {
-              isInCart(item.id) 
-              ?
-              ""
-              :
-              <ItemCount
-                stock={item.stock}
-                counter={cantidad}
-                setCounter={setCantidad}
-                onAdd={handleAgregar}
-              ></ItemCount>
-            }
-            {cart.length > 0 ? 
-            <Link to="/cart">
-            <Button >Finalizar Compra</Button> 
-            </Link>
-            : "" }
-            
+              {isInCart(item.id) ? (
+                ""
+              ) : (
+                <ItemCount
+                  stock={item.stock}
+                  counter={cantidad}
+                  setCounter={setCantidad}
+                  onAdd={handleAgregar}
+                ></ItemCount>
+              )}
+              {cart.length > 0 ? (
+                <Link to="/cart">
+                  <Button size="lg" className="d-grid gap-2 mb-2">
+                    Revisar Carrito
+                  </Button>
+                </Link>
+              ) : (
+                ""
+              )}
+              <Row className="d-grid gap-2 mb-2">
+                {cart.length > 0 ? (
+                  <Link to="/">
+                    <Button size="lg">Seguir Comprando</Button>
+                  </Link>
+                ) : (
+                  ""
+                )}
+              </Row>
             </Col>
           </Row>
         </Col>
