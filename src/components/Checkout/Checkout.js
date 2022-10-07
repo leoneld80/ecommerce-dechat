@@ -1,38 +1,57 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext/CartContext";
-
-
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const Checkout = () => {
+  const { cart, cartTotal } = useCartContext();
 
-const {cart, cartTotal} = useCartContext() 
+  const [orderId, setOrderId] = useState(null)
 
-const [values, setValues] = useState({
-  nombre:"",
-  email:"",
-  direccion:""
+  const [values, setValues] = useState({
+    nombre: "",
+    email: "",
+    direccion: "",
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const orden = {
+      comprador: values,
+      items: cart,
+      total: cartTotal(),
+    };
+    const ordenesRef = collection(db, "orders");
 
-})  
-const handleSubmit = (e) => {
-  e.preventDefault()
-  const orden = {
-   comprador: values,
-   items: cart,
-   total:cartTotal()
-  } 
-  console.log(orden);
-}
-const handleInputChange = (e) => {
-  setValues({
-    ...values,
-    [e.target.name]: e.target.value
-  })
-}
+    addDoc(ordenesRef, orden)
+      .then((doc) => {
+          console.log(doc.id);
+          setOrderId(doc.id)
 
-if (cart.length === 0) {
-  return <Navigate to="/"/>
-}
+      })
+  };
+
+
+  const handleInputChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  if(orderId){
+    return(
+      <div>
+      <h2>Compra realizada con exito!</h2>
+      <hr/>
+      <p>Tu número de orden es: <strong>{orderId}</strong></p>
+      </div>
+    )
+  }
+
+  if (cart.length === 0) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="Container my-5">

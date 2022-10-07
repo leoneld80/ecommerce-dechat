@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Col, Row, Button } from "react-bootstrap";
 import "./ItemDetail.css";
-import { BsStarFill, BsStar } from "react-icons/bs";
+import { BsStarFill, BsStar, BsCartCheck } from "react-icons/bs";
 import ItemCount from "../ItemCount/ItemCount";
 import { useCartContext } from "../../context/CartContext/CartContext";
 import { Link } from "react-router-dom";
@@ -100,18 +100,21 @@ const ItemDetail = ({ item }) => {
                 ></ItemCount>
               )}
               {cart.length > 0 ? (
-                <Link to="/cart">
-                  <Button size="lg" className="d-grid gap-2 mb-2">
-                    Revisar Carrito
-                  </Button>
+                <Link className="btn btn-success d-grid gap-2 my-2" to="/cart">
+                  <Row>
+                    <p>
+                      {" "}
+                      <BsCartCheck /> Ver Carrito{" "}
+                    </p>
+                  </Row>
                 </Link>
               ) : (
                 ""
               )}
-              <Row className="d-grid gap-2 mb-2">
+              <Row>
                 {cart.length > 0 ? (
-                  <Link to="/">
-                    <Button size="lg">Seguir Comprando</Button>
+                  <Link className="btn btn-warning" to="/">
+                    Seguir Comprando
                   </Link>
                 ) : (
                   ""
