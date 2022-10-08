@@ -7,7 +7,7 @@ import { db } from "../../firebase/config";
 const Checkout = () => {
   const { cart, cartTotal } = useCartContext();
 
-  const [orderId, setOrderId] = useState(null)
+  const [orderId, setOrderId] = useState(null);
 
   const [values, setValues] = useState({
     nombre: "",
@@ -23,14 +23,10 @@ const Checkout = () => {
     };
     const ordenesRef = collection(db, "orders");
 
-    addDoc(ordenesRef, orden)
-      .then((doc) => {
-          console.log(doc.id);
-          setOrderId(doc.id)
-
-      })
+    addDoc(ordenesRef, orden).then((doc) => {
+      setOrderId(doc.id);
+    });
   };
-
 
   const handleInputChange = (e) => {
     setValues({
@@ -39,14 +35,16 @@ const Checkout = () => {
     });
   };
 
-  if(orderId){
-    return(
+  if (orderId) {
+    return (
       <div>
-      <h2>Compra realizada con exito!</h2>
-      <hr/>
-      <p>Tu número de orden es: <strong>{orderId}</strong></p>
+        <h2>Compra realizada con exito!</h2>
+        <hr />
+        <p>
+          Tu número de orden es: <strong>{orderId}</strong>
+        </p>
       </div>
-    )
+    );
   }
 
   if (cart.length === 0) {

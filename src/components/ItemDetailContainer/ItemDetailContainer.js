@@ -5,17 +5,24 @@ import { Container, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
+import "../Loader/Loader"
+import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const { product_id } = useParams();
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    setLoading(true)
     const docRef = doc(db, "items", product_id );
     getDoc(docRef)
       .then((res) => {
         setProduct({id: res.id,...res.data()})
       })
+      .finally(() => {
+        setLoading(false)
+    })
  
     
     // const getData = () => {
@@ -39,13 +46,7 @@ const ItemDetailContainer = () => {
   return (
     <div>
       <Container>
-        {product.length === 0 ? (
-          <div className="mb-4" style={{ textAlign: "center", margin: "auto" }}>
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-          </div>
-        ) : (
+        { loading ? <Loader/> : (
           <ItemDetail
          item={product}
           />
