@@ -6,7 +6,7 @@ import { db } from "../../firebase/config";
 import { Container, Form, FormGroup, FormLabel } from "react-bootstrap";
 
 const Checkout = () => {
-  const { cart, cartTotal} = useCartContext();
+  const { cart, cartTotal, clearCart } = useCartContext();
 
   const [orderId, setOrderId] = useState(null);
 
@@ -27,7 +27,6 @@ const Checkout = () => {
     addDoc(ordenesRef, orden).then((doc) => {
       setOrderId(doc.id);
     });
-    
   };
 
   const handleInputChange = (e) => {
@@ -35,7 +34,6 @@ const Checkout = () => {
       ...values,
       [e.target.name]: e.target.value,
     });
-
   };
 
   if (orderId) {
@@ -46,6 +44,7 @@ const Checkout = () => {
         <p>
           Tu número de orden es: <strong>{orderId}</strong>
         </p>
+        {clearCart()}
       </Container>
     );
   }
@@ -55,44 +54,42 @@ const Checkout = () => {
   }
 
   return (
-    <div className="Container my-5">
+    <div className="Container m-5">
       <h1>Checkout</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup className="mb-3">
-          <FormLabel>
-            Nombre y apellido
-          </FormLabel>
-        <Form.Control
-          name="nombre"
-          onChange={handleInputChange}
-          value={values.nombre}
-          type={"text"}
-          placeholder="Nombre y Apellido"
+          <FormLabel>Nombre y apellido</FormLabel>
+          <Form.Control
+            required
+            name="nombre"
+            onChange={handleInputChange}
+            value={values.nombre}
+            type={"text"}
+            placeholder="Nombre y Apellido"
           />
-          </FormGroup>
-         <FormGroup className="mb-3">
-        <Form.Label>
-          Dirección de correo electrónico
-        </Form.Label>
-        <Form.Control
-          name="email"
-          type={"email"}
-          value={values.email}
-          onChange={handleInputChange}
-          placeholder="ejemplo@correo.com"
+        </FormGroup>
+        <FormGroup className="mb-3">
+          <Form.Label>Dirección de correo electrónico</Form.Label>
+          <Form.Control
+            name="email"
+            type={"email"}
+            value={values.email}
+            onChange={handleInputChange}
+            placeholder="ejemplo@correo.com"
           />
-          </FormGroup> 
-          
-          <FormGroup className="mb-3">
-        <Form.Label>Dirección de Envio</Form.Label>
-        <Form.Control
-          name="direccion"
-          type={"text"}
-          value={values.direccion}
-          onChange={handleInputChange}
-          placeholder="provincia, ciudad, calle Nro"
+        </FormGroup>
+
+        <FormGroup className="mb-3">
+          <Form.Label>Dirección de Envio</Form.Label>
+          <Form.Control
+            required
+            name="direccion"
+            type={"text"}
+            value={values.direccion}
+            onChange={handleInputChange}
+            placeholder="provincia, ciudad, calle Nro"
           />
-          </FormGroup>
+        </FormGroup>
         <button type="submit" className="btn btn-primary">
           Realizar Compra
         </button>

@@ -48,8 +48,8 @@ const Footer = () => {
         <Col>
           <p>¿BUSCÁS OFERTAS?</p>
           <Row>
-            <input placeholder="ingresá tu eMail"></input>
-            <Button variant="info" onClick={() => console.log("Light")}>
+            <input type={"email"} placeholder="ingresá tu eMail"></input>
+            <Button variant="info" onClick={() => console.log("")}>
               Recibir Ofertas
             </Button>
             
