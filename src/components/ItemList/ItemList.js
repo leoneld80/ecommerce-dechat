@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
 // import data from "../../data/data";
-import { Row, Spinner } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import "./ItemList.css";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Col, Row, Button } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import "./ItemDetail.css";
 import { BsStarFill, BsStar, BsCartCheck } from "react-icons/bs";
 import ItemCount from "../ItemCount/ItemCount";
