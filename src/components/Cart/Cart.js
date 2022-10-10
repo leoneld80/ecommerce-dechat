@@ -1,15 +1,28 @@
-import React, { useContext, useState } from "react";
-import { Button, Col, Row, Table } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { CartContext } from "../../context/CartContext/CartContext";
 import { BsTrash } from "react-icons/bs";
-import "./Cart.css"
+import "./Cart.css";
+import { Link } from "react-router-dom";
+// import ModalEmptyCart from "../../components/ModalEmptyCart/ModalEmptyCart";
 
 const Cart = () => {
-  const { cart, removeItem, clearCart } = useContext(CartContext);
-  console.log(cart);
+  const { cart, removeItem, clearCart, cartTotal } = useContext(CartContext);
 
-  const [precioTotal, setPrecioTotal] = useState("0")
+  // const [precioTotal, setPrecioTotal] = useState("0");
 
+  if (cart.length === 0) {
+    return (
+      <Container className="my-5">
+        <h2>No hay productos en el carrito</h2>
+        <div className="d-grid">
+          <Link to="/">
+            <Button variant="info">Ver lista de productos</Button>
+          </Link>
+        </div>
+      </Container>
+    );
+  }
 
   return (
     <div className="container my-5">
@@ -21,13 +34,12 @@ const Cart = () => {
             <th>id</th>
             <th>Titulo</th>
             <th>Cantidad</th>
-            <th>Precio</th>
+            <th>Precio unitario</th>
           </tr>
         </thead>
 
         <tbody>
           {cart.map((item) => (
-       
             <tr key="{item.id}">
               <td>{item.id}</td>
               <td>
@@ -40,9 +52,9 @@ const Cart = () => {
                   ></img>
                 </div>
               </td>
-              <td>
-                {item.cantidad}</td>
-              <td>${item.price * item.cantidad}</td>
+              <td>{item.cantidad}</td>
+              <td>${item.price}</td>
+              {}
               <div className="cartButtons">
                 <BsTrash onClick={() => removeItem(item.id)} />
               </div>
@@ -52,19 +64,24 @@ const Cart = () => {
       </Table>
       <Row className="">
         <Col className="precioTotal">
-      
-        <span>Total a Pagar</span>
-            
+          <span><h3>Total a Pagar ${cartTotal()}</h3></span>
         </Col>
 
-      {cart.length >= 0 ? (
-        <Button variant="warning" onClick={() => clearCart()}>
-          Vaciar Carrito
-        </Button>
-      ) : (
-        ""
-        )}
-        </Row>
+        <Col>
+          {cart.length >= 0 ? (
+            <div>
+              <Button className="m-2" variant="warning" onClick={() => clearCart()}>
+                Vaciar Carrito
+              </Button>
+              <Link className="btn btn-success" to="/checkout">
+                Finalizar compra
+              </Link>
+            </div>
+          ) : (
+            ""
+          )}
+        </Col>
+      </Row>
     </div>
   );
 };

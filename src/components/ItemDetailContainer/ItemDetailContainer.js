@@ -1,42 +1,36 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import data from "../../data/data";
+// import data from "../../data/data";
 import { Container, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
+import "../Loader/Loader"
+import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const { product_id } = useParams();
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const getData = () => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(data.find((product) => product.id === Number(product_id)));
-        }, 2000);
-      });
-    };
-
-    getData()
+    setLoading(true)
+    const docRef = doc(db, "items", product_id );
+    getDoc(docRef)
       .then((res) => {
-        setProduct(res);
+        setProduct({id: res.id,...res.data()})
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .finally(() => {
+        setLoading(false)
+    })
+ 
   }, [product_id]);
 
   // const productFilter = product.filter(product => product.id === Number(1) )
   return (
     <div>
       <Container>
-        {product.length === 0 ? (
-          <div className="mb-4" style={{ textAlign: "center", margin: "auto" }}>
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-          </div>
-        ) : (
+        { loading ? <Loader/> : (
           <ItemDetail
          item={product}
           />
