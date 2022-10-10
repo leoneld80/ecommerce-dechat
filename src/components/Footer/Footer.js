@@ -2,29 +2,33 @@ import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { BsYoutube, BsInstagram, BsFacebook } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import "./Footer.css"
-
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <div className="col-md footer" style={{ background: "#f8f9fa" }}>
-      {/* {background:"#f8f9fa"} */}
       <Row></Row>
       <Row className="mx-5 my-5" style={{ fontSize: "small" }}>
         <Col>
           <Row>
             <Link to="#">
-            <p><BsInstagram/> INSTAGRAM</p>
+              <p>
+                <BsInstagram /> INSTAGRAM
+              </p>
             </Link>
           </Row>
           <Row>
-          <Link to="#">
-            <p><BsYoutube/> YOUTUBE</p>
+            <Link to="#">
+              <p>
+                <BsYoutube /> YOUTUBE
+              </p>
             </Link>
           </Row>
           <Row>
-          <Link to="#">
-            <p><BsFacebook/> FACEBOOK</p>
+            <Link to="#">
+              <p>
+                <BsFacebook /> FACEBOOK
+              </p>
             </Link>
           </Row>
         </Col>
@@ -35,13 +39,13 @@ const Footer = () => {
             </Link>
           </Row>
           <Row>
-          <Link to="#">
-            <p>TÉRM & COND</p>
+            <Link to="#">
+              <p>TÉRM & COND</p>
             </Link>
           </Row>
           <Row>
-          <Link to="#">
-            <p>MIS PEDIDOS</p>
+            <Link to="#">
+              <p>MIS PEDIDOS</p>
             </Link>
           </Row>
         </Col>
@@ -52,7 +56,6 @@ const Footer = () => {
             <Button variant="info" onClick={() => console.log("")}>
               Recibir Ofertas
             </Button>
-            
           </Row>
         </Col>
       </Row>

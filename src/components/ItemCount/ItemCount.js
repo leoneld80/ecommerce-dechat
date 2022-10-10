@@ -4,8 +4,6 @@ import { BsFillCartFill } from "react-icons/bs";
 import "./ItemCount.css";
 
 function ItemCount({ stock, counter, setCounter, onAdd }) {
- 
-
   const handleSumar = () => {
     setCounter(counter + 1);
   };
@@ -13,7 +11,6 @@ function ItemCount({ stock, counter, setCounter, onAdd }) {
   const handleRestar = () => {
     setCounter(counter - 1);
   };
-
 
   return (
     <div>
@@ -39,11 +36,7 @@ function ItemCount({ stock, counter, setCounter, onAdd }) {
         </Row>
 
         <div className="d-grid gap-2 mb-2">
-          <Button
-            variant="success"
-            size="lg"
-            onClick={onAdd}
-          >
+          <Button variant="success" size="lg" onClick={onAdd}>
             Agregar al carrito <BsFillCartFill />
           </Button>
         </div>
@@ -51,7 +44,5 @@ function ItemCount({ stock, counter, setCounter, onAdd }) {
     </div>
   );
 }
-
-
 
 export default ItemCount;
