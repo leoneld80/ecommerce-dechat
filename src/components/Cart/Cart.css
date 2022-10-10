@@ -1,0 +1,8 @@
+.cartButtons:hover {
+    cursor: pointer;
+}
+
+.precioTotal {
+    display: flex;
+    text-align: right;
+}

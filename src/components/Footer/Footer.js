@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
-
+import { BsYoutube, BsInstagram, BsFacebook } from "react-icons/bs";
 const Footer = () => {
   return (
     <div className="col-md " style={{ background: "#f8f9fa" }}>
@@ -9,13 +9,13 @@ const Footer = () => {
       <Row className="mx-5 my-5" style={{ fontSize: "small" }}>
         <Col>
           <Row>
-            <p>INSTAGRAM</p>
+            <p><BsInstagram/> INSTAGRAM</p>
           </Row>
           <Row>
-            <p>YOUTUBE</p>
+            <p><BsYoutube/> YOUTUBE</p>
           </Row>
           <Row>
-            <p>FACEBOOK</p>
+            <p><BsFacebook/> FACEBOOK</p>
           </Row>
         </Col>
         <Col>
