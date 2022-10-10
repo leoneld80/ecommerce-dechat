@@ -7,7 +7,7 @@ const AlertMsg = () => {
     
     if (show) {
         return (
-          <Alert variant="primary" style={{backgroundColor:"purple", color:"white"}} onClose={() => setShow(false)} dismissible>
+          <Alert variant="info"  onClose={() => setShow(false)} dismissible>
             Solo por hoy envios gratis!! <FaShippingFast/>
           </Alert>
         );

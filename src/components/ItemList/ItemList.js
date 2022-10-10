@@ -35,18 +35,7 @@ const ItemList = (props) => {
       .finally(() => {
         setLoading(false)
     })
-    // getData().then((res) => {
-    //   if (!category_id) {
-    //     setProducts(res);
-    //   } else {
-    //     setProducts( res.filter((prod) => prod.category_id === category_id))
-    //   }
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // }).finally(() => {
-    //   console.log("fin del proceso");
-    // });
+  
   }, [category_id]);
 
   return (

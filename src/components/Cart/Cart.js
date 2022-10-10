@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 // import ModalEmptyCart from "../../components/ModalEmptyCart/ModalEmptyCart";
 
 const Cart = () => {
-  const { cart, removeItem, clearCart } = useContext(CartContext);
-  console.log(cart);
+  const { cart, removeItem, clearCart, cartTotal } = useContext(CartContext);
 
   // const [precioTotal, setPrecioTotal] = useState("0");
 
@@ -35,7 +34,7 @@ const Cart = () => {
             <th>id</th>
             <th>Titulo</th>
             <th>Cantidad</th>
-            <th>Precio</th>
+            <th>Precio unitario</th>
           </tr>
         </thead>
 
@@ -54,7 +53,8 @@ const Cart = () => {
                 </div>
               </td>
               <td>{item.cantidad}</td>
-              <td>${item.price * item.cantidad}</td>
+              <td>${item.price}</td>
+              {}
               <div className="cartButtons">
                 <BsTrash onClick={() => removeItem(item.id)} />
               </div>
@@ -64,19 +64,13 @@ const Cart = () => {
       </Table>
       <Row className="">
         <Col className="precioTotal">
-          <span>Total a Pagar</span>
+          <span><h3>Total a Pagar ${cartTotal()}</h3></span>
         </Col>
-        <Row>
-          <Col>
-            {/* <Button variant="success" onClick={() => console.log("Success")}>
-          Finalizar Compra
-        </Button> */}
-          </Col>
-        </Row>
+
         <Col>
           {cart.length >= 0 ? (
             <div>
-              <Button variant="warning" onClick={() => clearCart()}>
+              <Button className="m-2" variant="warning" onClick={() => clearCart()}>
                 Vaciar Carrito
               </Button>
               <Link className="btn btn-success" to="/checkout">

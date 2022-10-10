@@ -10,7 +10,6 @@ const ItemDetail = ({ item }) => {
   const [cantidad, setCantidad] = useState(1);
 
   const { cart, addToCart, isInCart } = useCartContext();
-  console.log(cart);
   const handleAgregar = () => {
     // const sumarMismoItem = {
 
@@ -103,23 +102,26 @@ const ItemDetail = ({ item }) => {
                 <Link className="btn btn-success d-grid gap-2 my-2" to="/cart">
                   <Row>
                     <p>
-                      {" "}
-                      <BsCartCheck /> Ver Carrito{" "}
+                      
+                      <BsCartCheck /> Ver Carrito
                     </p>
                   </Row>
                 </Link>
               ) : (
                 ""
               )}
-              <Row>
+              <Col>
+              
                 {cart.length > 0 ? (
-                  <Link className="btn btn-warning" to="/">
-                    Seguir Comprando
+                  <Link className="btn btn-primary d-grid gap-2 my-2" to="/">
+                    <Row>
+                      <p>Seguir Comprando</p>
+                    </Row>
                   </Link>
                 ) : (
                   ""
-                )}
-              </Row>
+                  )}
+                  </Col>
             </Col>
           </Row>
         </Col>

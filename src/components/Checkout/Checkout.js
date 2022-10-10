@@ -3,9 +3,10 @@ import { Navigate } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext/CartContext";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/config";
+import { Container, Form, FormGroup, FormLabel } from "react-bootstrap";
 
 const Checkout = () => {
-  const { cart, cartTotal } = useCartContext();
+  const { cart, cartTotal, clearCart } = useCartContext();
 
   const [orderId, setOrderId] = useState(null);
 
@@ -26,6 +27,7 @@ const Checkout = () => {
     addDoc(ordenesRef, orden).then((doc) => {
       setOrderId(doc.id);
     });
+    
   };
 
   const handleInputChange = (e) => {
@@ -33,17 +35,18 @@ const Checkout = () => {
       ...values,
       [e.target.name]: e.target.value,
     });
+
   };
 
   if (orderId) {
     return (
-      <div>
+      <Container className="mx-5">
         <h2>Compra realizada con exito!</h2>
         <hr />
         <p>
           Tu número de orden es: <strong>{orderId}</strong>
         </p>
-      </div>
+      </Container>
     );
   }
 
@@ -54,36 +57,46 @@ const Checkout = () => {
   return (
     <div className="Container my-5">
       <h1>Checkout</h1>
-
-      <form onSubmit={handleSubmit}>
-        <input
+      <Form onSubmit={handleSubmit}>
+        <FormGroup className="mb-3">
+          <FormLabel>
+            Nombre y apellido
+          </FormLabel>
+        <Form.Control
           name="nombre"
           onChange={handleInputChange}
           value={values.nombre}
           type={"text"}
-          className="my-3 form-control"
           placeholder="Nombre y Apellido"
-        />
-        <input
+          />
+          </FormGroup>
+         <FormGroup className="mb-3">
+        <Form.Label>
+          Dirección de correo electrónico
+        </Form.Label>
+        <Form.Control
           name="email"
           type={"email"}
           value={values.email}
           onChange={handleInputChange}
-          className="my-3 form-control"
-          placeholder="Correo electronico"
-        />
-        <input
+          placeholder="ejemplo@correo.com"
+          />
+          </FormGroup> 
+          
+          <FormGroup className="mb-3">
+        <Form.Label>Dirección de Envio</Form.Label>
+        <Form.Control
           name="direccion"
           type={"text"}
           value={values.direccion}
           onChange={handleInputChange}
-          className="my-3 form-control"
-          placeholder="Dirección"
-        />
+          placeholder="provincia, ciudad, calle Nro"
+          />
+          </FormGroup>
         <button type="submit" className="btn btn-primary">
-          Enviar
+          Realizar Compra
         </button>
-      </form>
+      </Form>
     </div>
   );
 };

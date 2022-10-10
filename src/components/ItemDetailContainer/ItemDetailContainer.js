@@ -24,22 +24,6 @@ const ItemDetailContainer = () => {
         setLoading(false)
     })
  
-    
-    // const getData = () => {
-    //   return new Promise((resolve, reject) => {
-    //     setTimeout(() => {
-    //       resolve(data.find((product) => product.id === Number(product_id)));
-    //     }, 2000);
-    //   });
-    // };
-
-    // getData()
-    //   .then((res) => {
-    //     setProduct(res);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   }, [product_id]);
 
   // const productFilter = product.filter(product => product.id === Number(1) )
