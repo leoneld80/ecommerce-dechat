@@ -16,7 +16,7 @@ const Item = (props) => {
         <Card.Img variant="top" src={image} />
         <Row>
           <Col>
-            <h4 style={{color:"black"}}>{title}</h4>
+            <h4 style={{ color: "black" }}>{title}</h4>
           </Col>
         </Row>
         <Row>

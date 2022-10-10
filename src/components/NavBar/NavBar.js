@@ -10,51 +10,50 @@ import CartWidget from "../CartWidget/CartWidget";
 function NavBar() {
   return (
     <>
-      <Navbar collapseOnSelect bg="light" variant="light" expand ="md" sticky="top">
+      <Navbar
+        collapseOnSelect
+        bg="light"
+        variant="light"
+        expand="md"
+        sticky="top"
+      >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <Image src="../img/logo.png"  style={{width:"20%"}} alt="logo funko store"/>
+            <Image
+              src="../img/logo.png"
+              style={{ width: "20%" }}
+              alt="logo funko store"
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            
-            <Nav.Link as={Link} to="/sale">
-              <Badge bg="danger">Ofertas</Badge>
+            <Nav className="me-auto">
+              <Nav.Link as={Link} to="/sale">
+                <Badge bg="danger">Ofertas</Badge>
               </Nav.Link>
-            <NavDropdown title="Categorias" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/category/star-wars">
-                Star Wars
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/marvel">
-                Marvel
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/dc">
-                DC
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/series-tv">
-                Series-Tv
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/dragon-ball">
-                Dragon Ball
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/disney">
-                Disney
-              </NavDropdown.Item>
-            </NavDropdown>
-            
-            {/* <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Buscar.."
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Buscar</Button>
-          </Form> */}
-          </Nav>
-        </Navbar.Collapse>
-        <CartWidget></CartWidget>
+              <NavDropdown title="Categorias" id="basic-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/category/star-wars">
+                  Star Wars
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/category/marvel">
+                  Marvel
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/category/dc">
+                  DC
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/category/series-tv">
+                  Series-Tv
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/category/dragon-ball">
+                  Dragon Ball
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/category/disney">
+                  Disney
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+          <CartWidget></CartWidget>
         </Container>
       </Navbar>
     </>

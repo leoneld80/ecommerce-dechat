@@ -4,12 +4,9 @@ import { CartContext } from "../../context/CartContext/CartContext";
 import { BsTrash } from "react-icons/bs";
 import "./Cart.css";
 import { Link } from "react-router-dom";
-// import ModalEmptyCart from "../../components/ModalEmptyCart/ModalEmptyCart";
 
 const Cart = () => {
   const { cart, removeItem, clearCart, cartTotal } = useContext(CartContext);
-
-  // const [precioTotal, setPrecioTotal] = useState("0");
 
   if (cart.length === 0) {
     return (
@@ -64,13 +61,19 @@ const Cart = () => {
       </Table>
       <Row className="">
         <Col className="precioTotal">
-          <span><h3>Total a Pagar ${cartTotal()}</h3></span>
+          <span>
+            <h3>Total a Pagar ${cartTotal()}</h3>
+          </span>
         </Col>
 
         <Col>
           {cart.length >= 0 ? (
             <div>
-              <Button className="m-2" variant="warning" onClick={() => clearCart()}>
+              <Button
+                className="m-2"
+                variant="warning"
+                onClick={() => clearCart()}
+              >
                 Vaciar Carrito
               </Button>
               <Link className="btn btn-success" to="/checkout">

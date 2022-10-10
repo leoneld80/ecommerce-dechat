@@ -11,10 +11,6 @@ const ItemDetail = ({ item }) => {
 
   const { cart, addToCart, isInCart } = useCartContext();
   const handleAgregar = () => {
-    // const sumarMismoItem = {
-
-    // }
-
     const itemToCart = {
       id: item.id,
       price: item.price,
@@ -102,7 +98,6 @@ const ItemDetail = ({ item }) => {
                 <Link className="btn btn-success d-grid gap-2 my-2" to="/cart">
                   <Row>
                     <p>
-                      
                       <BsCartCheck /> Ver Carrito
                     </p>
                   </Row>
@@ -111,7 +106,6 @@ const ItemDetail = ({ item }) => {
                 ""
               )}
               <Col>
-              
                 {cart.length > 0 ? (
                   <Link className="btn btn-primary d-grid gap-2 my-2" to="/">
                     <Row>
@@ -120,8 +114,8 @@ const ItemDetail = ({ item }) => {
                   </Link>
                 ) : (
                   ""
-                  )}
-                  </Col>
+                )}
+              </Col>
             </Col>
           </Row>
         </Col>

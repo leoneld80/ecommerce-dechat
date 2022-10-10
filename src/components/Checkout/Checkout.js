@@ -27,6 +27,7 @@ const Checkout = () => {
     addDoc(ordenesRef, orden).then((doc) => {
       setOrderId(doc.id);
     });
+    
   };
 
   const handleInputChange = (e) => {
