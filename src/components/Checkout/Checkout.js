@@ -6,7 +6,7 @@ import { db } from "../../firebase/config";
 import { Container, Form, FormGroup, FormLabel } from "react-bootstrap";
 
 const Checkout = () => {
-  const { cart, cartTotal, clearCart } = useCartContext();
+  const { cart, cartTotal} = useCartContext();
 
   const [orderId, setOrderId] = useState(null);
 
